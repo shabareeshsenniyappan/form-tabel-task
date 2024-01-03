@@ -38,10 +38,13 @@ function AddUser({ userDetail, closeModal }) {
 
   const [isEdit, setisEdit] = useState(false);
   useEffect(() => {
-    console.log(userDetail, "oi");
-    setUserData({ ...userData, ...userDetail });
-    if (Object.keys(userDetail).length === 0) setisEdit(false);
-    else setisEdit(true);
+    if (userDetail) {
+      if (Object.keys(userDetail).length === 0) setisEdit(false);
+      else {
+        setisEdit(true);
+        setUserData({ ...userData, ...userDetail });
+      }
+    }
   }, [userDetail]);
 
   const dispatch = useDispatch();
@@ -91,8 +94,6 @@ function AddUser({ userDetail, closeModal }) {
       userData?.linkedInURL === ""
     );
   };
-
-  console.log(isEdit);
   // console.log(userDetail, isEdit, "userData");
   return (
     <div>
@@ -148,6 +149,7 @@ function AddUser({ userDetail, closeModal }) {
               name="gender"
               checked={userData?.gender === "Male"}
               onChange={onChangeInput}
+              required
             />
             Male
             <input
@@ -205,7 +207,7 @@ function AddUser({ userDetail, closeModal }) {
             type={"submit"}
             name={"Submit"}
             clr={"dark"}
-            // disable={() => checkButtonDisabled()}
+            disable={() => checkButtonDisabled()}
           />
           <Buttoncomponent
             type={"reset"}
