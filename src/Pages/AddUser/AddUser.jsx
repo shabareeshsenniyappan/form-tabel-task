@@ -11,6 +11,7 @@ import {
 import classes from "./AddUser.module.css";
 import React, { useEffect, useState } from "react";
 import { addUser, editUser } from "../../feature/user";
+import { maxLength, minLength } from "../../Services/config";
 
 function AddUser({ userDetail, closeModal }) {
   //     Form Details:
@@ -94,7 +95,6 @@ function AddUser({ userDetail, closeModal }) {
       userData?.linkedInURL === ""
     );
   };
-  // console.log(userDetail, isEdit, "userData");
   return (
     <div>
       <div className={classes.headerAddClose} onClick={closeModalClick}>
@@ -114,8 +114,8 @@ function AddUser({ userDetail, closeModal }) {
           name={"name"}
           value={userData?.name}
           onChangeData={onChangeInput}
-          minLength={2}
-          maxLength={19}
+          minLength={minLength}
+          maxLength={maxLength}
           errorValidator={validateUserName}
           errorMsg={"Enter a Valid Name"}
         />

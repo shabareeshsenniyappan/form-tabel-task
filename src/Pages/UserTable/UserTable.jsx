@@ -4,6 +4,7 @@ import Buttoncomponent from "../../Components/ButtonComponent/Buttoncomponent";
 import classes from "./UserTable.module.css";
 import Modal from "react-modal";
 import AddUser from "../AddUser/AddUser";
+import { isUserEditable } from "../../Services/config";
 
 function UserTable() {
   let user = useSelector((state) => state?.user?.user);
@@ -20,7 +21,6 @@ function UserTable() {
     setselectedUser(user[index]);
     openAddModel();
   };
-  console.log(user, "klklk");
   return (
     <div className={classes.useTablePageHeroContainer}>
       <div className={classes.header}>
@@ -63,6 +63,7 @@ function UserTable() {
                 }}
                 clr={"dark"}
                 name={"Edit"}
+                disable={isUserEditable}
               />
             </td>
           </tr>

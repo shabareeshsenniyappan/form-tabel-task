@@ -5,7 +5,6 @@ import UserTable from "./Pages/UserTable/UserTable";
 function App() {
   return (
     <div>
-      {/* <AddUser /> */}
       <UserTable />
     </div>
   );
