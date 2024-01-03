@@ -1,0 +1,22 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+.labelInput {
+  font-size: large;
+}
+
+.inputHero {
+  height: 40px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.errorLabel {
+  color: red;
+  font-size: small;
+}

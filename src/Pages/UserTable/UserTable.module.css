@@ -1,0 +1,20 @@
+.tableContainer {
+}
+
+.useTablePageHeroContainer {
+  width: 75dvw;
+  height: 100dvh;
+  margin: auto;
+}
+
+.header {
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headFont {
+  font-size: xx-large;
+  font-weight: 600;
+  text-transform: uppercase;
+}
